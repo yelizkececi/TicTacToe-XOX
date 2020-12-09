@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     //MARK: - Properties
+    @IBOutlet weak var winLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
@@ -25,6 +26,10 @@ class ViewController: UIViewController {
     
     func checkWinner() {
         
+        if let winner = gameManager.winner{
+            winLabel.text = "Winner \(winner.hashValue)"
+            
+        }
     }
 }
 
