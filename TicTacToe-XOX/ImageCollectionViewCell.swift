@@ -8,7 +8,9 @@
 import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
-
     @IBOutlet weak var imageView: UIImageView!
     
+    func configure(square: Square) {
+        imageView.image = square.image
+    }
 }

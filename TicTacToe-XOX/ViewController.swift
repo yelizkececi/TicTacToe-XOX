@@ -8,37 +8,43 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //MARK: - Properties
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
             collectionView.dataSource = self
         }
     }
+    
     let gameManager = GameManager()
+    
+    //MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func checkWinner() {
+        
+    }
 }
 
+//MARK: - CollectionView Delegations
 extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("")
-        return gameManager.images.count
+        return gameManager.squares.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let imageItem = gameManager.images[indexPath.row]
+        let imageItem = gameManager.squares[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCollectionViewCell
-        cell.imageView.image = imageItem.image
-        //cell.imageView.isHidden = imageItem.isHidden
+        cell.configure(square: imageItem)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCollectionViewCell
-        gameManager.tappedOnChangeImage(indexPath: indexPath)
+        gameManager.squareTapped(at: indexPath)
         self.collectionView.reloadData()
+        checkWinner()
     }
 }
