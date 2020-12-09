@@ -22,13 +22,16 @@ class ViewController: UIViewController {
     //MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        winLabel.isHidden = true
     }
     
     func checkWinner() {
-        
-        if let winner = gameManager.winner{
-            winLabel.text = "Winner \(winner.hashValue)"
-            
+        if let winner = gameManager.winner {
+            winLabel.isHidden = false
+            winLabel.text = "Winner \(winner)"
+        } else if gameManager.isGameEnded(){
+            winLabel.isHidden = false
+            winLabel.text = "It's a draw"
         }
     }
 }

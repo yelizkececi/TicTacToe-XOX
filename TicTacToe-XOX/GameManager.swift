@@ -13,7 +13,7 @@ class GameManager {
     var winner: Square?
     
     private let winConditions = [
-        [0, 1, 2]
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
     ]
     
     init() {
@@ -28,7 +28,6 @@ class GameManager {
     
     func squareTapped(at indexPath: IndexPath) {
         let square = squares[indexPath.row]
-        
         if square == .b {
             squares[indexPath.row] = turn
             turn = getOtherTurn()
