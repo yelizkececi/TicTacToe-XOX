@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import PMAlertController
 
 class ViewController: UIViewController {
     //MARK: - Properties
     @IBOutlet weak var winLabel: UILabel!
+    @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
@@ -18,21 +20,49 @@ class ViewController: UIViewController {
     }
     
     let gameManager = GameManager()
-    
+    var alertVC = PMAlertController()
     //MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         winLabel.isHidden = true
+        startButton.isHidden = true
+
     }
     
     func checkWinner() {
         if let winner = gameManager.winner {
             winLabel.isHidden = false
             winLabel.text = "Winner \(winner)"
+            alert()
         } else if gameManager.isGameEnded(){
             winLabel.isHidden = false
             winLabel.text = "It's a draw"
+            alert()
         }
+    }
+    
+    @IBAction func startButtonClicked(_ sender: Any) {
+        gameManager.restartGame()
+        collectionView.reloadData()
+        collectionView.isHidden = false
+        startButton.isHidden = true
+        
+    }
+    
+    func alert() {
+        alertVC = PMAlertController(title: "Game Over", description: "Do you want to play game again?", image: gameManager.winner!.image, style: .alert)
+
+        alertVC.addAction(PMAlertAction(title: "OK", style: .default, action: { [self]() in
+            winLabel.isHidden = true
+            gameManager.restartGame()
+            collectionView.reloadData()
+                }))
+        alertVC.addAction(PMAlertAction(title: "Cancel", style: .cancel, action: { [self] () -> Void in
+            collectionView.isHidden = true
+            winLabel.isHidden = true
+            startButton.isHidden = false
+                }))
+        self.present(alertVC, animated: true, completion: nil)
     }
 }
 

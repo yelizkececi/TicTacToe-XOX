@@ -24,8 +24,20 @@ class GameManager {
         for _ in 0...8 {
             squares.append(.b)
         }
+        //randomizeGame()
     }
     
+    func randomizeGame() {
+        for _ in 1...45 {
+            let randomIndex = Int.random(in: 0...8)
+            squareTapped(at: IndexPath(row: randomIndex, section: 0))
+        }
+    }
+    func restartGame() {
+        squares.removeAll()
+        initializeGame()
+        winner = nil
+    }
     func squareTapped(at indexPath: IndexPath) {
         let square = squares[indexPath.row]
         if square == .b {
