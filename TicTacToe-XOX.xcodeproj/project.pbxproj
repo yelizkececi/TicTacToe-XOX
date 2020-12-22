@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21AB91942583F9D900BF924F /* GameManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB91932583F9D900BF924F /* GameManagerTests.swift */; };
 		21D41009257C218C00161079 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D41008257C218C00161079 /* AppDelegate.swift */; };
 		21D4100B257C218C00161079 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4100A257C218C00161079 /* SceneDelegate.swift */; };
 		21D4100D257C218C00161079 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4100C257C218C00161079 /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		0DCD3354D2D52FE28545045E /* Pods-TicTacToe-XOXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe-XOXTests.debug.xcconfig"; path = "Target Support Files/Pods-TicTacToe-XOXTests/Pods-TicTacToe-XOXTests.debug.xcconfig"; sourceTree = "<group>"; };
+		21AB91932583F9D900BF924F /* GameManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManagerTests.swift; sourceTree = "<group>"; };
 		21BED1B82582AE9C005E73CB /* TicTacToe-XOXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TicTacToe-XOXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BED1B92582AE9C005E73CB /* TicTacToe-XOXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TicTacToe-XOXUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BED1BA2582AE9C005E73CB /* TicTacToe-XOX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TicTacToe-XOX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +133,7 @@
 		21D4101E257C219000161079 /* TicTacToe-XOXTests */ = {
 			isa = PBXGroup;
 			children = (
+				21AB91932583F9D900BF924F /* GameManagerTests.swift */,
 				21D4101F257C219000161079 /* TicTacToe_XOXTests.swift */,
 				21D41021257C219000161079 /* Info.plist */,
 			);
@@ -156,7 +159,6 @@
 				0DCD3354D2D52FE28545045E /* Pods-TicTacToe-XOXTests.debug.xcconfig */,
 				3C06A76AD673A6678E55FD95 /* Pods-TicTacToe-XOXTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -422,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21D41020257C219000161079 /* TicTacToe_XOXTests.swift in Sources */,
+				21AB91942583F9D900BF924F /* GameManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
