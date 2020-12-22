@@ -33,11 +33,13 @@ class GameManager {
             squareTapped(at: IndexPath(row: randomIndex, section: 0))
         }
     }
+    
     func restartGame() {
         squares.removeAll()
         initializeGame()
         winner = nil
     }
+    
     func squareTapped(at indexPath: IndexPath) {
         let square = squares[indexPath.row]
         if square == .b {
@@ -51,6 +53,9 @@ class GameManager {
     }
     
     private func getOtherTurn() -> Square {
+        if (getWinner() == nil){
+            
+        }
         if turn == .x {
             return .o
         } else if turn == .o {
@@ -60,7 +65,7 @@ class GameManager {
         return .b
     }
     
-    func isGameEnded() -> Bool {
+    func didSquaresFinish() -> Bool {
         return squares.filter { $0 == .b }.isEmpty
     }
     

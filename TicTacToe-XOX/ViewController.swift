@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             winLabel.isHidden = false
             winLabel.text = "Winner \(winner)"
             alert()
-        } else if gameManager.isGameEnded(){
+        } else if gameManager.didSquaresFinish(){
             winLabel.isHidden = false
             winLabel.text = "It's a draw"
             alert()
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     }
     
     func alert() {
-        alertVC = PMAlertController(title: "Game Over", description: "Do you want to play game again?", image: gameManager.winner!.image, style: .alert)
+        alertVC = PMAlertController(title: "Game Over", description: "Do you want to play game again?", image: UIImage(named: "gameover"), style: .alert)
 
         alertVC.addAction(PMAlertAction(title: "OK", style: .default, action: { [self]() in
             winLabel.isHidden = true
