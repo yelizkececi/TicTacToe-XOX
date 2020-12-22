@@ -7,4 +7,4 @@
 <kbd><img src="Screenshots/ss3.png?raw=true" width="500">  </kbd>
 
 # Author
-yelizkececi -- yelizkececi@gmail.com
+yelizkececi
